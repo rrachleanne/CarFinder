@@ -17,7 +17,7 @@ class CarsController < ApplicationController
   def new
     # if the user is not logged in redirect to the login page
     # else redirect to the cars form page
-    if current_user
+    if user_signed_in?
         # if the user has created a profile show the cars form else redirect to creating a profile page
         if current_user.profile
             @car = Car.new
@@ -32,6 +32,7 @@ class CarsController < ApplicationController
         puts "------new user session"
     end
 end
+
 
   # GET /cars/1/edit
   def edit

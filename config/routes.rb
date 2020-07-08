@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :sellers
   resources :profiles
 #homepage
+root to: 'pages#home'
  
-  get "/", to: "pages#home", as: "root"
 
 #sell page
   get "/sell", to: "pages#sell", as: "sell"
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
  
 #listingspage
   devise_for :users
-  get "/listings", to: "listings#listings", as: "listings"
+  get "/listings", to: "pages#listings", as: "listings"
 
 
   

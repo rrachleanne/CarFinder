@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :profile
+  has_many :listings
 end
